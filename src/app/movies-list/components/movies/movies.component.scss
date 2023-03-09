@@ -1,0 +1,180 @@
+@import '../../../../styles.scss';
+
+
+.MainContainer {
+    display: grid;
+    grid-template-columns: 20% 80%;
+
+    #searchBar {
+    background-color: var(--primary-color);
+        padding: 4px 20px;
+    }
+
+    #movieCards {
+        height: calc(100svh - 60px);
+    }
+}
+
+.searchInput {
+    text-align: center;
+    padding-top: 20px;
+
+    ::ng-deep {
+        .mat-form-field-appearance-fill .mat-form-field-flex {
+            background-color: var(--text-titles);
+            border-radius: 10px
+        }
+
+        .mat-form-field-underline {
+            display: none
+        }
+    }
+}
+
+.cardContainer {
+    padding-top: 50px !important;
+    padding-left: 30px !important;
+    @include movie-card-grid(4, 30px, 10px);
+
+    .movie-list-item {
+
+        mat-card {
+            height: 150px;
+            width: 220px;
+            cursor: pointer;
+            @include linearGradient;
+            filter: drop-shadow(1px 4px 5px);
+            transition: transform 0.3s ease-out;
+
+            &:hover {
+                transform: scale(1.11);
+            }
+
+            mat-card-header {
+                align-items: center;
+
+                span {
+                    color: var(--text-titles);
+                    @include clamp-line-text(2);
+                    font-size: 14px;
+                    letter-spacing: 2px;
+                    padding: 3px;
+                    filter: drop-shadow(2px 6px 4px black);
+                }
+
+                border-bottom: 2px solid var(--element-background);
+            }
+
+            mat-card-content {
+                height: 45px;
+            }
+
+            mat-card-title {
+                color: var(--text-titles);
+
+                img {
+                    border-radius: 50%;
+                    height: 50px;
+                    box-shadow: 0px 0px 4px 0px;
+                }
+            }
+
+            mat-card-footer {
+                margin: 0;
+                @include flex-space-between;
+
+                p {
+                    padding-top: 3px;
+                    color: var(--text-titles);
+                    @include clamp-line-text(1);
+                    font-size: 12px;
+                    letter-spacing: 2px;
+                    line-height: 1.6;
+                    font-weight: 300;
+                }
+
+                .mat-raised-button {
+                    line-height: 30px;
+                    background-color: var(--call-to-action);
+                    color: var(--text-titles);
+                }
+            }
+
+            p {
+                padding-top: 3px;
+                color: var(--text-titles);
+                @include clamp-line-text(2);
+                font-size: 12px;
+                letter-spacing: 2px;
+                line-height: 1.6;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.dialogueBox{
+    mat-card{
+        height: 450px;
+        width: 750px;
+        background: linear-gradient(0deg, #1a2226, #565656);
+        mat-card-header {
+            align-items: center;
+            span {
+                color: white;
+                font-size: 16px;
+                letter-spacing: 3px;
+                padding: 6px;
+                filter: drop-shadow(2px 6px 4px black);
+            }
+
+            border-bottom: 2px solid #8e8e8e;
+        }
+        mat-card-title {
+            color: white;
+            img {
+                height: 100px;
+                box-shadow: 0px 0px 4px 0px;
+            }
+        }
+        mat-card-content {
+            height: 280px;
+        }
+        p {
+            padding-top: 8px;
+            color: white;
+            font-size: 14px;
+            letter-spacing: 2px;
+            line-height: 2;
+            font-weight: 300;
+            @include clamp-line-text(10);
+        }
+        #generes{
+            letter-spacing: 3px;
+        }
+        mat-card-footer{
+            @include flex-space-between;
+            padding:0px 20px
+        }
+    }
+}
+
+.paginator {
+    mat-paginator{
+        background-color: var(--primary-color);
+        position: fixed;
+        bottom: 0px;
+        width: 80%;
+    }
+}
+
+.errorMsg{
+    position: relative;
+    width: 100%;
+    display: flex;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding-left: 20px;
+    height: 80%;
+    color: var(--text-titles);
+}

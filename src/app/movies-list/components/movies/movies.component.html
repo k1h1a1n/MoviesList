@@ -1,0 +1,112 @@
+<div class="MainContainer">
+  <div id="searchBar">
+    <ng-container [ngTemplateOutlet]="searchBar"></ng-container>
+    <div>
+      <button (click)="getCurrentPageList()" mat-raised-button>Reload</button>
+    </div>
+  </div>
+  <div id="movieCards">
+    <ng-container [ngTemplateOutlet]="moviecards"></ng-container>
+    <ng-container *ngIf="error" [ngTemplateOutlet]="errorscreen"></ng-container>
+    <ng-container [ngTemplateOutlet]="paginator"></ng-container>
+  </div>
+</div>
+<ng-template #searchBar>
+  <div class="searchInput">
+    <mat-form-field appearance="fill">
+      <mat-label>Search</mat-label>
+      <input
+        [formControl]="searchControl"
+        matInput
+        placeholder="Enter a search term"
+      />
+      <button mat-icon-button matSuffix>
+        <mat-icon>search</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+</ng-template>
+<ng-template #moviecards>
+  <div class="cardContainer">
+    <div
+      [@scaleIn]
+      *ngFor="let movie of movieList$ | async"
+      class="movie-list-item"
+    >
+      <mat-card (click)="openDailogueMovieCard(dialogueBox, movie)">
+        <mat-card-header>
+          <mat-card-title>
+            <img
+              [src]="
+                avatarUrl +
+                '?name=' +
+                movie.title +
+                '&background=random&color=fff'
+              "
+              alt="Image"
+            />
+          </mat-card-title>
+          <span>
+            {{ movie.title }}
+          </span>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ movie.description || "N.A" }}</p>
+        </mat-card-content>
+        <mat-card-footer>
+          <p>{{ movie.genres || "N.A" }}</p>
+          <!-- <button mat-raised-button>View</button> -->
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #paginator>
+  <div class="paginator">
+    <mat-paginator
+      #paginator
+      [length]="totalCount"
+      (page)="handlePageEvent($event)"
+      [pageSize]="10"
+      [hidePageSize]="false"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</ng-template>
+
+<ng-template #dialogueBox let-data>
+  <div class="dialogueBox">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>
+          <img
+            [src]="
+              avatarUrl +
+              '?name=' +
+              data.title +
+              '&background=random&color=fff'
+            "
+            alt="Image"
+          />
+        </mat-card-title>
+        <span>
+          {{ data.title }}
+        </span>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ data.description || "N.A" }}</p>
+      </mat-card-content>
+      <mat-card-footer>
+        <p id="generes">Genres : {{ data.genres || "N.A" }}</p>
+        <button mat-raised-button (click)="closeDialogue()">Close</button>
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</ng-template>
+<ng-template #errorscreen>
+  <div class="errorMsg">
+    Something went wrong.Please Reload
+  </div>
+</ng-template>

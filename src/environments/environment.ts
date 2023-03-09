@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  movieListUrl: 'https://demo.credy.in/api/v1/maya/movies',
+  loginUrl: `https://demo.credy.in/api/v1/usermodule/login`,
+  avatarUrl:'https://ui-avatars.com/api',
+  
 };
 
 /*

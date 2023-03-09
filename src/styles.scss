@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+:host {
+  --primary-color: #043f57;
+  --header-text: #ffffff;
+  --text-titles: #ffffff;
+  --call-to-action: #ca264d;
+  --secondary-color: #91b0c1;
+  --element-background: #8E8E8E;
+  --card-gradient-header: #024e6d;
+  --card-gradient-content: #565656;
+  --sun-color: rgb(255, 255, 0);
+  --moon-color: rgb(171, 189, 189);
+}
+// rgb(32, 33, 35);
+:host-context(.dark-theme) {
+  --primary-color: rgb(32, 33, 35);
+  --header-text: #ffffff;
+  --text-titles: #ffffff;
+  --call-to-action: #ca264d;
+  --secondary-color: rgba(68, 70, 84, 1);
+  --element-background: #8E8E8E;
+  --card-gradient-header: rgb(32, 33, 35);
+  --card-gradient-content: rgba(68, 70, 84, 1);
+  --sun-color: rgb(255, 255, 0);
+  --moon-color: rgb(0 255 248);
+}
+
+
+@mixin movie-card-grid($cols, $gap , $Pad) {
+  display: grid;
+  grid-template-columns: repeat($cols, auto);
+  grid-gap: $gap;
+  justify-content: start;
+  padding: $Pad;
+
+  // @media screen and (max-width: 554px) {
+  //   grid-template-columns: repeat(1 , auto);
+  // }
+
+  @media screen and (min-width: 1100px) and (max-width: 1200px) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @media screen and (min-width: 600px) and (max-width: 1099px) {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  @media screen and (min-width: 1300px) {
+    grid-template-columns: repeat($cols, auto);
+  }
+  @media screen and (min-width: 600px) and (max-width: 854px) {
+    grid-template-columns: repeat(1, auto);
+  }
+}
+
+@mixin clamp-line-text($noOfLine) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $noOfLine; // Set the number of lines to show
+}
+
+@mixin linearGradient{
+  background: linear-gradient(0deg, var(--card-gradient-header), var(--card-gradient-content));
+}
+
+@mixin flex-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+// mat-toggle
+.mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
+  background-color: var(--moon-color);
+}
+
+.mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+  background-color: var(--element-background);
+}
+
+.mat-slide-toggle-bar {
+  background-color: var(--element-background);
+}
+
+.mat-slide-toggle-thumb {
+  background-color: var(--sun-color);
+}
+
+// mat-toggle
+
+.mat-form-field {
+  width: 100%;
+}
+
+
+//paginator
+
+.mat-paginator-container,
+.mat-paginator-navigation-next,
+.mat-paginator-navigation-previous,
+.mat-paginator-navigation-last,
+.mat-paginator-navigation-first
+ {
+  letter-spacing: 3px;
+  color: var(--text-titles); /* change this to whatever white color you prefer */
+}
+
+//paginator
+
+//dialogue container
+  .mat-dialog-container{
+    padding: 4px !important;
+    position: absolute;
+    top: 20%;
+    left: 33%;
+    width: inherit !important;
+    height: inherit !important;
+  }
+//dialogue container
+
+.mat-label{
+  color: var(--text-titles);
+}

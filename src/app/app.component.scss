@@ -1,0 +1,51 @@
+@import '../styles.scss';
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    background-color: var(--primary-color);
+    color: var(--text-titles);
+    font-weight: 500;
+    padding: 0 4px;
+    box-shadow: 0px 2px 4px 2px var(--element-background);
+    .title{
+      display: flex;
+      align-items: center;
+      span{
+        font-size: 16px;
+        color: var(--header-text);
+        letter-spacing: 2px;
+        font-weight: 400;
+        margin: 0px 10px
+      }
+    }
+    .theme-toggle{
+      span{
+        padding: 0px 10px;
+        i{
+          font-size: 26px;
+        }
+        .fa-sun{
+          color: var(--sun-color);
+        }
+        .fa-moon{
+          color: var(--moon-color);
+        }
+      }
+    }
+  }
+  .routerOutlet{
+    position: relative;
+    width: 100%;
+    padding-top: 60px;
+    background-color:var(--secondary-color);
+    min-height: calc(100svh - 60px);
+  }
+  

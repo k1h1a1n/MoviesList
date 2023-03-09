@@ -1,0 +1,22 @@
+@import '../../../../styles.scss';
+
+.form-wrapper {
+    display: flex;
+    justify-content: center; /* horizontally center the form */
+    align-items: center; /* vertically center the form */
+    height: calc(100svh - 60px); /* set the height of the wrapper to the full viewport height */
+    .formBox{
+        background-color: #cdd4d9;
+        border-radius: 30px;
+        text-align: center;
+        padding: 40px;
+        box-shadow: 0px 0px 4px 1px;
+        div{
+            width: 300px;
+            padding: 10px 0px;
+        }
+    }
+  }
+.LoginButon{
+    @include flex-space-between
+}

@@ -1,0 +1,50 @@
+<div class="form-wrapper">
+  <div class="formBox">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>User Name</mat-label>
+          <input
+            type="email"
+            matInput
+            formControlName="userName"
+            placeholder="Ex. pat@example.com"
+          />
+          <mat-hint>Enter your username</mat-hint>
+          <mat-error
+            *ngIf="
+              controller['userName'].invalid &&
+              (controller['userName'].dirty || controller['userName'].touched)
+            "
+          >
+            Username is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>password</mat-label>
+          <input type="email" matInput formControlName="password" />
+          <mat-hint>Enter your Password</mat-hint>
+          <mat-error
+            *ngIf="
+              controller['password'].invalid &&
+              (controller['password'].dirty || controller['password'].touched)
+            "
+          >
+            Password is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="LoginButon">
+        <div>
+          <button type="submit" mat-stroked-button [disabled]="disableLogin">Sign In</button>
+        </div>
+        <div>
+          <button type="button" [routerLink]="'/moviesList/movies'" mat-stroked-button [disabled]="disableLogin">Movies Page</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

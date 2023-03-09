@@ -1,0 +1,7 @@
+{
+    "/demo/*": {
+      "target": "https://demo.credy.in/api/v1/maya/movies",
+      "secure": false,
+      "changeOrigin": true
+    }
+}

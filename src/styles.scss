@@ -34,6 +34,7 @@ body {
 
 
 @mixin movie-card-grid($cols, $gap , $Pad) {
+  background-color: var(--secondary-color);
   display: grid;
   grid-template-columns: repeat($cols, auto);
   grid-gap: $gap;
@@ -44,7 +45,7 @@ body {
   //   grid-template-columns: repeat(1 , auto);
   // }
 
-  @media screen and (min-width: 1100px) and (max-width: 1200px) {
+  @media screen and (min-width: 1100px) and (max-width: 1399px) {
     grid-template-columns: repeat(3, auto);
   }
 
@@ -52,7 +53,7 @@ body {
     grid-template-columns: repeat(2, auto);
   }
 
-  @media screen and (min-width: 1300px) {
+  @media screen and (min-width: 1400px) {
     grid-template-columns: repeat($cols, auto);
   }
 

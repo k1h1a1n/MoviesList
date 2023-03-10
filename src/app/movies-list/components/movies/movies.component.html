@@ -1,9 +1,6 @@
 <div class="MainContainer">
   <div id="searchBar">
     <ng-container [ngTemplateOutlet]="searchBar"></ng-container>
-    <div>
-      <button (click)="getCurrentPageList()" mat-raised-button>Reload</button>
-    </div>
   </div>
   <div id="movieCards">
     <ng-container [ngTemplateOutlet]="moviecards"></ng-container>
@@ -24,6 +21,9 @@
         <mat-icon>search</mat-icon>
       </button>
     </mat-form-field>
+  </div>
+  <div>
+    <button (click)="getCurrentPageList()" mat-raised-button>Reload</button>
   </div>
 </ng-template>
 <ng-template #moviecards>

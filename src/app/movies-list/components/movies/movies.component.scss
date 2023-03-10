@@ -2,16 +2,21 @@
 
 
 .MainContainer {
-    display: grid;
-    grid-template-columns: 20% 80%;
+    position: relative;
+    display: flex;
+    height: calc(100vh - 60px);
 
     #searchBar {
     background-color: var(--primary-color);
         padding: 4px 20px;
+        position: fixed;
+        width: 250px;
+        height: calc(100vh - 60px);
     }
 
     #movieCards {
-        height: calc(100vh - 60px);
+        margin-left: 280px;
+        flex: 1;
     }
 }
 
@@ -32,8 +37,7 @@
 }
 
 .cardContainer {
-    padding-top: 50px !important;
-    padding-left: 30px !important;
+    padding: 30px 0px 100px 30px !important;
     @include movie-card-grid(4, 30px, 10px);
 
     .movie-list-item {
@@ -164,7 +168,7 @@
         background-color: var(--primary-color);
         position: fixed;
         bottom: 0px;
-        width: 80%;
+        width: calc(100% - 270px);
     }
 }
 

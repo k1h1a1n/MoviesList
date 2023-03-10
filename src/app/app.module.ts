@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxUiLoaderConfig, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 import { SharedModule } from './shared/shared.module';
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
-  bgsColor : '#309bae',
+  bgsColor : '#fff',
   bgsSize : 50,
   bgsType : 'ball-spin-clockwise',
   bgsOpacity : 1,

@@ -83,10 +83,7 @@
         <mat-card-title>
           <img
             [src]="
-              avatarUrl +
-              '?name=' +
-              data.title +
-              '&background=random&color=fff'
+              avatarUrl + '?name=' + data.title + '&background=random&color=fff'
             "
             alt="Image"
           />
@@ -106,7 +103,5 @@
   </div>
 </ng-template>
 <ng-template #errorscreen>
-  <div class="errorMsg">
-    Something went wrong.Please Reload
-  </div>
+  <div class="errorMsg">Something went wrong.Please Reload</div>
 </ng-template>

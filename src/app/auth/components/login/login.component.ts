@@ -17,7 +17,7 @@ import { catchError, of } from 'rxjs';
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  disableLogin:boolean=false;
+  disableLogin: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService
@@ -31,23 +31,26 @@ export class LoginComponent {
     return this.loginForm.controls;
   }
   onSubmit(formData: any) {
-    if (this.loginForm.invalid){
+    if (this.loginForm.invalid) {
       this.loginForm.markAllAsTouched();
-      return
+      return;
     }
-    this.disableLogin = true; 
+    this.disableLogin = true;
     const input: LoginInput = {
       username: `${formData.userName}`,
       password: `${formData.password}`,
     };
-    this.loginService.authenticate(input).pipe(
-      catchError((error)=> {
+    this.loginService
+      .authenticate(input)
+      .pipe(
+        catchError((error) => {
+          this.disableLogin = false;
+          console.log(error.error, 'error looded');
+          return of();
+        })
+      )
+      .subscribe((x: LoginOutput) => {
         this.disableLogin = false;
-        console.log(error.error , 'error looded')
-        return of()
-      })
-    ).subscribe((x:LoginOutput) =>{
-      this.disableLogin = false;
-    })
+      });
   }
 }

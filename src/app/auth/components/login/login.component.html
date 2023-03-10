@@ -39,10 +39,19 @@
       </div>
       <div class="LoginButon">
         <div>
-          <button type="submit" mat-stroked-button [disabled]="disableLogin">Sign In</button>
+          <button type="submit" mat-stroked-button [disabled]="disableLogin">
+            Sign In
+          </button>
         </div>
         <div>
-          <button type="button" [routerLink]="'/moviesList/movies'" mat-stroked-button [disabled]="disableLogin">Movies Page</button>
+          <button
+            type="button"
+            [routerLink]="'/moviesList/movies'"
+            mat-stroked-button
+            [disabled]="disableLogin"
+          >
+            Movies Page
+          </button>
         </div>
       </div>
     </form>

@@ -18,7 +18,7 @@ body {
   --sun-color: rgb(255, 255, 0);
   --moon-color: rgb(171, 189, 189);
 }
-// rgb(32, 33, 35);
+
 :host-context(.dark-theme) {
   --primary-color: rgb(32, 33, 35);
   --header-text: #ffffff;
@@ -55,6 +55,7 @@ body {
   @media screen and (min-width: 1300px) {
     grid-template-columns: repeat($cols, auto);
   }
+
   @media screen and (min-width: 600px) and (max-width: 854px) {
     grid-template-columns: repeat(1, auto);
   }
@@ -68,7 +69,7 @@ body {
   -webkit-line-clamp: $noOfLine; // Set the number of lines to show
 }
 
-@mixin linearGradient{
+@mixin linearGradient {
   background: linear-gradient(0deg, var(--card-gradient-header), var(--card-gradient-content));
 }
 
@@ -108,25 +109,26 @@ body {
 .mat-paginator-navigation-next,
 .mat-paginator-navigation-previous,
 .mat-paginator-navigation-last,
-.mat-paginator-navigation-first
- {
+.mat-paginator-navigation-first {
   letter-spacing: 3px;
-  color: var(--text-titles); /* change this to whatever white color you prefer */
+  color: var(--text-titles);
+  /* change this to whatever white color you prefer */
 }
 
 //paginator
 
 //dialogue container
-  .mat-dialog-container{
-    padding: 4px !important;
-    position: absolute;
-    top: 20%;
-    left: 33%;
-    width: inherit !important;
-    height: inherit !important;
-  }
+.mat-dialog-container {
+  padding: 4px !important;
+  position: absolute;
+  top: 20%;
+  left: 33%;
+  width: inherit !important;
+  height: inherit !important;
+}
+
 //dialogue container
 
-.mat-label{
+.mat-label {
   color: var(--text-titles);
 }

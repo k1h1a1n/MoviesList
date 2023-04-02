@@ -5,8 +5,19 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
-
-:host {
+$primary: var(--primary);
+  $primary-color: var(--primary-color);
+  $header-text: var(--header-text);
+  $text-titles: var(--text-titles);
+  $call-to-action: var(--call-to-action);
+  $secondary-color: var(--secondary-color);
+  $element-background: var(--element-background);
+  $card-gradient-header: var(--card-gradient-header);
+  $card-gradient-content: var(--card-gradient-content);
+  $sun-color: var(--sun-color);
+  $moon-color: var(--moon-color);
+body{
+  --primary: rgb(193, 36, 36);
   --primary-color: #043f57;
   --header-text: #ffffff;
   --text-titles: #ffffff;
@@ -19,7 +30,8 @@ body {
   --moon-color: rgb(171, 189, 189);
 }
 
-:host-context(.dark-theme) {
+body.dark-theme{
+  --primary: black;
   --primary-color: rgb(32, 33, 35);
   --header-text: #ffffff;
   --text-titles: #ffffff;
@@ -32,9 +44,8 @@ body {
   --moon-color: rgb(0 255 248);
 }
 
-
 @mixin movie-card-grid($cols, $gap , $Pad) {
-  background-color: var(--secondary-color);
+  background-color: $secondary-color;
   display: grid;
   grid-template-columns: repeat($cols, auto);
   grid-gap: $gap;
@@ -71,7 +82,7 @@ body {
 }
 
 @mixin linearGradient {
-  background: linear-gradient(0deg, var(--card-gradient-header), var(--card-gradient-content));
+  background: linear-gradient(0deg, $card-gradient-header, $card-gradient-content);
 }
 
 @mixin flex-space-between {
@@ -82,19 +93,19 @@ body {
 
 // mat-toggle
 .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb {
-  background-color: var(--moon-color);
+  background-color: $moon-color;
 }
 
 .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
-  background-color: var(--element-background);
+  background-color: $element-background;
 }
 
 .mat-slide-toggle-bar {
-  background-color: var(--element-background);
+  background-color: $element-background;
 }
 
 .mat-slide-toggle-thumb {
-  background-color: var(--sun-color);
+  background-color: $sun-color;
 }
 
 // mat-toggle
@@ -112,7 +123,7 @@ body {
 .mat-paginator-navigation-last,
 .mat-paginator-navigation-first {
   letter-spacing: 3px;
-  color: var(--text-titles);
+  color: $text-titles;
   /* change this to whatever white color you prefer */
 }
 
@@ -131,5 +142,5 @@ body {
 //dialogue container
 
 .mat-label {
-  color: var(--text-titles);
+  color: $text-titles;
 }

@@ -1,13 +1,12 @@
 @import '../../../../styles.scss';
 
-
 .MainContainer {
     position: relative;
     display: flex;
     height: calc(100vh - 60px);
 
     #searchBar {
-    background-color: var(--primary-color);
+    background-color: $primary-color;
         padding: 4px 20px;
         position: fixed;
         width: 250px;
@@ -26,7 +25,7 @@
 
     ::ng-deep {
         .mat-form-field-appearance-fill .mat-form-field-flex {
-            background-color: var(--text-titles);
+            background-color: $text-titles;
             border-radius: 10px
         }
 
@@ -58,7 +57,7 @@
                 align-items: center;
 
                 span {
-                    color: var(--text-titles);
+                    color: $text-titles;
                     @include clamp-line-text(2);
                     font-size: 14px;
                     letter-spacing: 2px;
@@ -66,7 +65,7 @@
                     filter: drop-shadow(2px 6px 4px black);
                 }
 
-                border-bottom: 2px solid var(--element-background);
+                border-bottom: 2px solid $element-background;
             }
 
             mat-card-content {
@@ -74,7 +73,7 @@
             }
 
             mat-card-title {
-                color: var(--text-titles);
+                color: $text-titles;
 
                 img {
                     border-radius: 50%;
@@ -89,7 +88,7 @@
 
                 p {
                     padding-top: 3px;
-                    color: var(--text-titles);
+                    color: $text-titles;
                     @include clamp-line-text(1);
                     font-size: 12px;
                     letter-spacing: 2px;
@@ -99,14 +98,14 @@
 
                 .mat-raised-button {
                     line-height: 30px;
-                    background-color: var(--call-to-action);
-                    color: var(--text-titles);
+                    background-color: $call-to-action;
+                    color: $text-titles;
                 }
             }
 
             p {
                 padding-top: 3px;
-                color: var(--text-titles);
+                color: $text-titles;
                 @include clamp-line-text(2);
                 font-size: 12px;
                 letter-spacing: 2px;
@@ -118,24 +117,24 @@
 }
 
 .dialogueBox{
+    
     mat-card{
         height: 450px;
         width: 750px;
-        background: linear-gradient(0deg, rgb(32, 33, 35), rgba(68, 70, 84, 1));
+        background: linear-gradient(0deg, $card-gradient-header, $card-gradient-content);
         mat-card-header {
             align-items: center;
             span {
-                color: white;
+                color: $text-titles;
                 font-size: 16px;
                 letter-spacing: 3px;
                 padding: 6px;
                 filter: drop-shadow(2px 6px 4px black);
             }
-
-            border-bottom: 2px solid #8e8e8e;
+            border-bottom: 2px solid $element-background;
         }
         mat-card-title {
-            color: white;
+            color: $text-titles;
             img {
                 height: 100px;
                 box-shadow: 0px 0px 4px 0px;
@@ -146,7 +145,7 @@
         }
         p {
             padding-top: 8px;
-            color: white;
+            color: $text-titles;
             font-size: 14px;
             letter-spacing: 2px;
             line-height: 2;
@@ -165,7 +164,7 @@
 
 .paginator {
     mat-paginator{
-        background-color: var(--primary-color);
+        background-color: $primary-color;
         position: fixed;
         bottom: 0px;
         width: calc(100% - 270px);
@@ -180,5 +179,5 @@
     letter-spacing: 1px;
     padding-left: 20px;
     height: 80%;
-    color: var(--text-titles);
+    color: $text-titles;
 }

@@ -10,17 +10,17 @@
     display: flex;
     align-items: center;
     justify-content:space-between ;
-    background-color: var(--primary-color);
-    color: var(--text-titles);
+    background-color: $primary-color;
+    color: $text-titles;
     font-weight: 500;
     padding: 0 4px;
-    box-shadow: 0px 2px 4px 2px var(--element-background);
+    box-shadow: 0px 2px 4px 2px $element-background;
     .title{
       display: flex;
       align-items: center;
       span{
         font-size: 16px;
-        color: var(--header-text);
+        color: $header-text;
         letter-spacing: 2px;
         font-weight: 400;
         margin: 0px 10px
@@ -33,10 +33,10 @@
           font-size: 26px;
         }
         .fa-sun{
-          color: var(--sun-color);
+          color: $sun-color;
         }
         .fa-moon{
-          color: var(--moon-color);
+          color: $moon-color;
         }
       }
     }
@@ -45,7 +45,7 @@
     position: relative;
     width: 100%;
     padding-top: 60px;
-    background-color:var(--secondary-color);
+    background-color:$secondary-color;
     min-height: calc(100vh - 60px);
   }
   

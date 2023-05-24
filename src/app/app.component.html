@@ -25,26 +25,21 @@
   </div>
   <!-- Router -->
 </div>
-
-
-  <!-- ^[A-Za-z]{2}-\\d{2}-\\d{4}$' -->
-
-  <!-- formatCode() {
-    if (this.code) {
-      const formattedCode = this.code.replace(/(\w{2})(\d{2})(\d{4})/, '$1-$2-$3');
-      this.code = formattedCode;
-    }
-  } -->
-
-  <!-- onInputChange(event: any) {
-    const inputValue = event.target.value;
-    let formattedValue = inputValue.replace(/[^A-Za-z0-9]/g, ''); // Remove non-alphanumeric characters
-    if (formattedValue.length > 2) {
-      formattedValue = formattedValue.slice(0, 2) + '-' + formattedValue.slice(2);
-    }
-    if (formattedValue.length > 6) {
-      formattedValue = formattedValue.slice(0, 5) + '-' + formattedValue.slice(5);
-    }
-    this.code = formattedValue;
+<!-- 
+onInputChange(event: any) {
+  const inputValue = event.target.value;
+  let formattedValue = inputValue.replace(/[^A-Za-z0-9]/g, ''); // Remove non-alphanumeric characters
+  if (formattedValue.length > 2) {
+    formattedValue = formattedValue.slice(0, 2) + '-' + formattedValue.slice(2);
   }
+  if (formattedValue.length > 5) {
+    formattedValue = formattedValue.slice(0, 5) + '-' + formattedValue.slice(5);
+  }
+  if (formattedValue.length > 8) {
+    formattedValue = formattedValue.slice(0, 8) + '-' + formattedValue.slice(8);
+  }
+  if (formattedValue.length > 13) {
+    formattedValue = formattedValue.slice(0, 13);
+  }
+  this.code = formattedValue;
 } -->

@@ -35,3 +35,16 @@
       this.code = formattedCode;
     }
   } -->
+
+  <!-- onInputChange(event: any) {
+    const inputValue = event.target.value;
+    let formattedValue = inputValue.replace(/[^A-Za-z0-9]/g, ''); // Remove non-alphanumeric characters
+    if (formattedValue.length > 2) {
+      formattedValue = formattedValue.slice(0, 2) + '-' + formattedValue.slice(2);
+    }
+    if (formattedValue.length > 6) {
+      formattedValue = formattedValue.slice(0, 5) + '-' + formattedValue.slice(5);
+    }
+    this.code = formattedValue;
+  }
+} -->
